@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand"
+)
 
 func swap(el, elem *int) {
 	temp := *el
@@ -8,16 +11,20 @@ func swap(el, elem *int) {
 	*elem = temp
 }
 func main() {
-	x := []int{2, 44, 5, 11, 43, 6, 55, 74, 113, 8, 1}
+	arr := make([]int, 20)
+	for i := 0; i < len(arr); i++ {
+		arr[i] = rand.Intn(200)
+	}
+	fmt.Printf("Unsorted array: %v \n", arr)
 	flag := true
 	for flag {
 		flag = false
-		for i := 0; i < len(x)-1; i++ {
-			if x[i] < x[i+1] {
-				swap(&x[i], &x[i+1])
+		for i := 0; i < len(arr)-1; i++ {
+			if arr[i] < arr[i+1] {
+				swap(&arr[i], &arr[i+1])
 				flag = true
 			}
 		}
 	}
-	fmt.Println(len(x), x)
+	fmt.Printf("Sorter array: %v \n", arr)
 }
