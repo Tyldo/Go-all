@@ -26,5 +26,5 @@ func main() {
 			}
 		}
 	}
-	fmt.Printf("Sorter array: %v \n", arr)
+	fmt.Printf("Sorted array: %v \n", arr)
 }
